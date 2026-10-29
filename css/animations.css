@@ -1,0 +1,165 @@
+@keyframes breatheIdle {
+  0%,
+  100% {
+    transform: translateY(0px) scaleY(1);
+  }
+  50% {
+    transform: translateY(-3px) scaleY(1.02);
+  }
+}
+
+@keyframes flyBob {
+  0%,
+  100% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes lungeStrike {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  40% {
+    transform: translateX(14px) scale(1.08);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes leapArc {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-34px) scale(1.08);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hurtShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-9px) rotate(-4deg);
+  }
+  40% {
+    transform: translateX(9px) rotate(4deg);
+  }
+  60% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes deathTilt {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-75deg) translateY(20px) scale(0.8);
+    opacity: 0.15;
+  }
+}
+
+@keyframes floatUpFade {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-48px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+.entity-sprite-img {
+  animation: breatheIdle 2.6s ease-in-out infinite;
+}
+
+.entity-sprite-img.sprite-flying {
+  animation: flyBob 1.4s ease-in-out infinite;
+}
+
+.anim-lunge {
+  animation: lungeStrike 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-leap {
+  animation: leapArc 260ms ease-out;
+}
+
+.anim-hurt {
+  animation: hurtShake 240ms ease-in-out;
+}
+
+.anim-death {
+  animation: deathTilt 320ms ease-in forwards;
+}
+
+.floating-combat-text {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.92rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 2px solid var(--ink-dark);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: floatUpFade 920ms ease-out forwards;
+}
+
+.float-dmg {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.float-heal {
+  background: #65a30d;
+  color: #ffffff;
+}
+
+.float-warn {
+  background: #f59e0b;
+  color: #1e130c;
+}
+
+.float-info {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+.float-friendly {
+  background: #9333ea;
+  color: #fef08a;
+  font-size: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entity-sprite-img,
+  .entity-sprite-img.sprite-flying,
+  .anim-lunge,
+  .anim-leap,
+  .anim-hurt,
+  .anim-death,
+  .floating-combat-text {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Lovec upírů: Venca Česnekáč",
+  "description": "1D tahová taktická roguelite hra s deterministickým deckbuildingem ve stylu kresleného humoru Jiřího Wintera Neprakty.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
